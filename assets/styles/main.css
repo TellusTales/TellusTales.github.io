@@ -1,0 +1,403 @@
+/* ----------------------- */
+/* Standard Default Overrides */
+
+html, body {
+	margin: 0;
+	background: #25313F;
+	line-height: 1.5em;
+}
+
+table {
+	table-layout: fixed;
+	width: 100%;
+}
+tr {
+	vertical-align: top;
+}
+select:hover {
+	cursor: pointer;
+	color: #67A1FF;
+}
+
+/* ----------------------- */
+/* Fonts 🏋️‍♂️ */
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+html, body {
+	font-family: 'Noto Sans', sans-serif;
+	/*font-family: 'Newsreader', sans-serif;*/
+	/*font-family: 'Fugaz One', cursive;*/
+}
+
+/* ----------------------- */
+/* Root Common Sections */
+
+.container {
+	/*margin: 8px;*/
+	padding: 8px;
+	margin: auto;
+	max-width: 550px;
+}
+body.bilingual .container {
+	max-width: 900px;
+}
+
+header {
+	background-color: #25313F;
+}
+header, header a {
+	color: white;
+}
+
+main {
+	background: white;
+	color: black;
+	min-height: 60vh;
+}
+
+footer {
+	background-color: #25313F;
+	padding-bottom: 3em;
+}
+footer, footer a {
+	color: white;
+}
+
+ruby {
+	font-size:  1.15em;
+	margin:  0.3em 0.1em;
+	/*display: inline-block;*/
+	display: inline-table;
+}
+rt {
+	user-select: none;
+}
+
+
+/* ----------------------- */
+/* Specifics Section Augmentations */
+/* Section: Main: */
+header h1 {
+	font-family: 'Fugaz One', cursive;
+	letter-spacing: 1px;
+}
+header h1 a {
+	text-decoration: none;
+}
+header {
+	position: relative;
+	height: 60px;
+}
+header .home-button {
+	position: absolute;
+	top: 17px;
+	left: 8px;
+}
+header .title {
+	width: 100%;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	line-height: 60px;
+	font-size: 1.5em;
+}
+header .title a {
+	/*transition: filter 0.2s, -webkit-filter 0.2s;*/
+}
+header .title a:hover {
+	filter: drop-shadow(2px 2px 0px #67A1FF); 
+	-webkit-filter: drop-shadow(2px 2px 0px #67A1FF);
+}
+header .language-select {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+}
+
+body.language-home header {
+	height: initial;
+}
+body.language-home header .home-button {
+	display: none;
+}
+body.language-home header .title {
+	font-size: 3em;
+	margin-top: 0.8em;
+	margin-bottom: 0.2em;
+}
+body.language-home header .language-select {
+	position: initial;
+	top: initial;
+	right: initial;
+
+	text-align: center;
+	margin-bottom: 1.5em;
+	font-size: 2em;
+}
+body.language-home header .language-select .icon {
+	display: none;
+}
+body.language-home header .language-select select {
+	font-family: 'Fugaz One', cursive;
+	text-align: center;
+	filter: drop-shadow(0px 0px 15px #67A1FF); 
+	-webkit-filter: drop-shadow(0px 0px 15px #67A1FF);
+	text-align-last:center;
+	padding: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+	header .home-button {
+		display: none;
+	}
+	header .title {
+		width: initial;
+		text-align: left;
+		padding-left: 8px;
+	}
+	body.language-home header .title {
+		text-align: center;
+	}
+}
+
+main {
+	font-family: 'Newsreader', serif;
+}
+body.bilingual main #stories td:nth-child(1) {
+	padding-right: 16px;
+}
+main h1, main h2, main h3 {
+	font-style: oblique;
+}
+main h2 {
+	font-size: 2em;
+	line-height: 1em;
+}
+#main-header {
+	margin-top: 8px;
+	min-height: 50px;
+}
+
+.support-us {
+	text-align: center;
+}
+
+/* UI: Dropdowns */
+select {
+	font-size: 1.0em;
+	padding: 10px;
+	border: 2px solid #25313F;
+	border-radius: 5px;
+}
+.language-select img.icon {
+	position: absolute;
+	padding: 10px;
+	height: 22px;
+}
+.language-select select {
+	padding-left: 32px;
+	font-size: 0.8em;
+}
+.bilingual-options-wrapper {
+	position: relative;
+}
+.bilingual-options-wrapper img.icon {
+	position: absolute;
+	padding: 9px;
+}
+.bilingual-options-wrapper select {
+	width: 100%;
+	padding-left: 33px;
+}
+
+
+/* UI: Bilingual Toggles + Buttons */
+.bilingual-toggle {
+	position: relative; 
+	display: inline-block;
+	vertical-align: top;
+}
+.bilingual-toggle a img {
+	height: 44px;
+	/*position: absolute;*/
+	transition: filter 0.2s, -webkit-filter 0.2s, transform 0.2s;
+}
+.bilingual-toggle a:hover img {
+	-webkit-filter: drop-shadow(0px 0px 3px #67A1FF);
+    filter: drop-shadow(0px 0px 3px #67A1FF);
+    transform: translate(0px, 1px);
+}
+
+ul.bilingual-suggestions {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 16px;
+
+	/*🛸 - Allow more options to fit on one screen*/
+	position: absolute;
+	/*width: 200vw;*/
+	/*overflow: auto;*/
+}
+.bilingual-suggestions li {
+	display: inline-block;
+	margin-right: 4px;
+}
+.bilingual-suggestions li a {
+	text-decoration: none;
+}
+.bilingual-suggestions li a div {
+	border: 2px solid #6D7278;
+	border-radius: 2em;
+	padding: 0.2em 1em;
+	line-height: 1em;
+	position: relative;
+	padding-left: 30px;
+	background: white;
+
+	filter: drop-shadow(2px 3px 0px black);
+}
+.bilingual-suggestions li a div:before {
+	content: "+";
+	color: #6D7278;
+	text-align: center;
+	font-weight: bold;
+	border: 2px solid;
+	position: absolute;
+	width: 17px;
+	height: 17px;
+	border-radius: 2em;
+	left: 5px;
+	top: 50%;
+	transform: translate(0px, -50%);
+}
+.bilingual-suggestions li a div span {
+	color: black;
+}
+.bilingual-suggestions li a div span.english {
+	font-style: oblique;
+	color: darkgray;
+}
+.bilingual-suggestions li a:hover div {
+	background: #25313F;
+}
+.bilingual-suggestions li a:hover div span,
+.bilingual-suggestions li a:hover div:before {
+	color: white;
+}
+
+/* UI: Misc. */
+.book-icon {
+	padding: 16px 0px;
+	width: 100%;
+	text-align: center;
+}
+
+/* ----------------------- */
+/* One-Offs (Only appears on one page) */
+#stories-list {
+	padding-bottom: 32px;
+}
+
+#stories-list .story a {
+	display: flex;
+	/*margin: 32px 0;*/
+	padding: 32px 0;
+	border-bottom: 1px solid gray;
+}
+#stories-list .story:last-child {
+	border-bottom: none;
+}
+#stories-list .story .thumb {
+	min-width: 145px;
+	/*height: 100%;*/
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #25313F;
+	
+	/* Example Style (Dynamic):; */
+	/*background-color: #FF4973;*/
+	/*background-image: url("/assets/imgs/stories/sweet-porridge.png");*/
+}
+#stories-list .story .content {
+	/*background: yellow;*/
+	padding-left: 16px;
+}
+#stories-list a {
+	text-decoration: none;
+	color: black;
+}
+#stories-list a:hover {
+	color: #67A1FF;
+}
+#stories-list a .thumb {
+	transition: filter 0.2s;
+}
+#stories-list a:hover .thumb {
+	filter: drop-shadow(8px 8px 0px #67A1FF);
+	transition: filter 0.2s;
+}
+#stories-list a:hover .title {
+	/*color: #25313F;*/
+	/*filter: drop-shadow(4px 4px 2px #67A1FF); */
+}
+#stories-list .story .content .title {
+	margin: 0;
+}
+#stories-list .story .content .date {
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 0.8em;
+	margin: 0.5em 0;
+}
+#stories-list .story .content .preview {
+	margin: 0.5em 0;
+	overflow: hidden;
+}
+#stories-list .story .content .preview p {
+	line-height: 1.2em;
+	margin: 0;
+	height: 3.6em;
+	/*background: cyan;*/
+	position: relative;
+}
+#stories-list .story .content .preview p:after {
+  content: "";
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 1.2em;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+}
+
+/* Other Stories List - Styling */
+.other-stories-label {
+	font-weight: bold;
+	font-size: 1.2em;
+	padding-bottom: 4px;
+	border-bottom: 2px solid;
+}
+footer ul {
+	list-style-type: none;
+	font-family: 'Newsreader', serif;
+	font-size: 1.2em;
+	font-weight: 600;
+	line-height: 2em;
+	padding: 0;
+}
+footer ul li {}
+footer ul li a {
+	text-decoration: none;
+}
+footer ul li a:hover {
+	border-bottom: 2px solid;
+}
+
+footer ul li a span:nth-child(2) {
+	padding-left: 2em;
+	font-style: oblique;
+}
